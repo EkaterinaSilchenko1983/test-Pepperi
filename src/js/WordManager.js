@@ -45,16 +45,16 @@ export default class WordManager {
   }
 
   displayWords(outputElement) {
-    // Очищаем outputElement
+    // Clear outputElement
     outputElement.innerHTML = '';
 
     this.wordsArray.map(word => {
-      // Создаем новый элемент li
+      // Create new element li
       let li = document.createElement('li');
       li.className = 'list-item';
       li.textContent = `${word.name}=${word.value}`;
 
-      // Добавляем элемент li в outputElement
+      // Add li in outputElement(list ul)
       outputElement.insertAdjacentElement('beforeend', li);
     });
   }

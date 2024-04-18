@@ -1,14 +1,14 @@
 import './css/styles.css';
 import WordManager from './js/WordManager.js';
 
-// Создаем экземпляр класса
+// Create an instance of the class
 let wordManager = new WordManager();
 
-// Получаем ссылку на элементы DOM
+// Get references to DOM elements
 let inputText = document.getElementById('inputText');
 let output = document.getElementById('output');
 
-// Обработчик нажатия на кнопку "Добавить"
+// Handler for the "Add" button click
 document.getElementById('addButton').addEventListener('click', () => {
   let inputValue = inputText.value.trim();
   if (inputValue !== '') {
@@ -18,7 +18,7 @@ document.getElementById('addButton').addEventListener('click', () => {
   }
 });
 
-// Обработчики нажатия на кнопки сортировки
+// Handlers for the sorting buttons click
 document.getElementById('sortByNameButton').addEventListener('click', () => {
   wordManager.sortByName();
   wordManager.displayWords(output);
@@ -33,9 +33,9 @@ document.getElementById('deleteButton').addEventListener('click', () => {
   wordManager.deleteSelectedText();
 });
 
-// Добавляем обработчик событий на родительский элемент
+// Add an event handler to the parent element
 output.addEventListener('click', function (event) {
-  // Проверяем, что клик был сделан именно по элементу li
+  // Check  li element
   if (event.target.nodeName === 'LI') {
     event.target.classList.toggle('selected');
   }
